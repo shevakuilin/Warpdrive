@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F2E50D421BA64360083CAAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E50D321BA64360083CAAA /* AppDelegate.swift */; };
+		9F2E50D621BA64360083CAAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E50D521BA64360083CAAA /* ViewController.swift */; };
+		9F2E50D821BA643D0083CAAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E50D721BA643D0083CAAA /* Assets.xcassets */; };
+		9F2E50DB21BA643D0083CAAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E50D921BA643D0083CAAA /* Main.storyboard */; };
+		9F2E50E721BA643D0083CAAA /* WarpdriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E50E621BA643D0083CAAA /* WarpdriveTests.swift */; };
+		9F2E50F221BA643D0083CAAA /* WarpdriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E50F121BA643D0083CAAA /* WarpdriveUITests.swift */; };
+		DFF05A5D28C50B4E55155A18 /* libPods-Warpdrive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAC6B2744AD525072C55EB7 /* libPods-Warpdrive.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F2E50E321BA643D0083CAAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F2E50C821BA64350083CAAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F2E50CF21BA64360083CAAA;
+			remoteInfo = Warpdrive;
+		};
+		9F2E50EE21BA643D0083CAAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F2E50C821BA64350083CAAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F2E50CF21BA64360083CAAA;
+			remoteInfo = Warpdrive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		89E0D11D869062DA579DC904 /* Pods-Warpdrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Warpdrive.debug.xcconfig"; path = "Target Support Files/Pods-Warpdrive/Pods-Warpdrive.debug.xcconfig"; sourceTree = "<group>"; };
+		9F2E50D021BA64360083CAAA /* Warpdrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Warpdrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F2E50D321BA64360083CAAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9F2E50D521BA64360083CAAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F2E50D721BA643D0083CAAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F2E50DA21BA643D0083CAAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9F2E50DC21BA643D0083CAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F2E50DD21BA643D0083CAAA /* Warpdrive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Warpdrive.entitlements; sourceTree = "<group>"; };
+		9F2E50E221BA643D0083CAAA /* WarpdriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WarpdriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F2E50E621BA643D0083CAAA /* WarpdriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarpdriveTests.swift; sourceTree = "<group>"; };
+		9F2E50E821BA643D0083CAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F2E50ED21BA643D0083CAAA /* WarpdriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WarpdriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F2E50F121BA643D0083CAAA /* WarpdriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarpdriveUITests.swift; sourceTree = "<group>"; };
+		9F2E50F321BA643D0083CAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9A7BCFD37F07E411AA7D13C /* Pods-Warpdrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Warpdrive.release.xcconfig"; path = "Target Support Files/Pods-Warpdrive/Pods-Warpdrive.release.xcconfig"; sourceTree = "<group>"; };
+		DCAC6B2744AD525072C55EB7 /* libPods-Warpdrive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Warpdrive.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F2E50CD21BA64360083CAAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF05A5D28C50B4E55155A18 /* libPods-Warpdrive.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F2E50DF21BA643D0083CAAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F2E50EA21BA643D0083CAAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42522E2E16C9961267310243 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCAC6B2744AD525072C55EB7 /* libPods-Warpdrive.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		955D4CB2C1E60BFFE31817F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89E0D11D869062DA579DC904 /* Pods-Warpdrive.debug.xcconfig */,
+				C9A7BCFD37F07E411AA7D13C /* Pods-Warpdrive.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9F2E50C721BA64350083CAAA = {
+			isa = PBXGroup;
+			children = (
+				9F2E50D221BA64360083CAAA /* Warpdrive */,
+				9F2E50E521BA643D0083CAAA /* WarpdriveTests */,
+				9F2E50F021BA643D0083CAAA /* WarpdriveUITests */,
+				9F2E50D121BA64360083CAAA /* Products */,
+				955D4CB2C1E60BFFE31817F3 /* Pods */,
+				42522E2E16C9961267310243 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9F2E50D121BA64360083CAAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F2E50D021BA64360083CAAA /* Warpdrive.app */,
+				9F2E50E221BA643D0083CAAA /* WarpdriveTests.xctest */,
+				9F2E50ED21BA643D0083CAAA /* WarpdriveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F2E50D221BA64360083CAAA /* Warpdrive */ = {
+			isa = PBXGroup;
+			children = (
+				9F2E50D321BA64360083CAAA /* AppDelegate.swift */,
+				9F2E50D521BA64360083CAAA /* ViewController.swift */,
+				9F2E50D721BA643D0083CAAA /* Assets.xcassets */,
+				9F2E50D921BA643D0083CAAA /* Main.storyboard */,
+				9F2E50DC21BA643D0083CAAA /* Info.plist */,
+				9F2E50DD21BA643D0083CAAA /* Warpdrive.entitlements */,
+			);
+			path = Warpdrive;
+			sourceTree = "<group>";
+		};
+		9F2E50E521BA643D0083CAAA /* WarpdriveTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F2E50E621BA643D0083CAAA /* WarpdriveTests.swift */,
+				9F2E50E821BA643D0083CAAA /* Info.plist */,
+			);
+			path = WarpdriveTests;
+			sourceTree = "<group>";
+		};
+		9F2E50F021BA643D0083CAAA /* WarpdriveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9F2E50F121BA643D0083CAAA /* WarpdriveUITests.swift */,
+				9F2E50F321BA643D0083CAAA /* Info.plist */,
+			);
+			path = WarpdriveUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F2E50CF21BA64360083CAAA /* Warpdrive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F2E50F621BA643D0083CAAA /* Build configuration list for PBXNativeTarget "Warpdrive" */;
+			buildPhases = (
+				610E3E1B598553A6420F8855 /* [CP] Check Pods Manifest.lock */,
+				9F2E50CC21BA64360083CAAA /* Sources */,
+				9F2E50CD21BA64360083CAAA /* Frameworks */,
+				9F2E50CE21BA64360083CAAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Warpdrive;
+			productName = Warpdrive;
+			productReference = 9F2E50D021BA64360083CAAA /* Warpdrive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9F2E50E121BA643D0083CAAA /* WarpdriveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F2E50F921BA643D0083CAAA /* Build configuration list for PBXNativeTarget "WarpdriveTests" */;
+			buildPhases = (
+				9F2E50DE21BA643D0083CAAA /* Sources */,
+				9F2E50DF21BA643D0083CAAA /* Frameworks */,
+				9F2E50E021BA643D0083CAAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F2E50E421BA643D0083CAAA /* PBXTargetDependency */,
+			);
+			name = WarpdriveTests;
+			productName = WarpdriveTests;
+			productReference = 9F2E50E221BA643D0083CAAA /* WarpdriveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9F2E50EC21BA643D0083CAAA /* WarpdriveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F2E50FC21BA643D0083CAAA /* Build configuration list for PBXNativeTarget "WarpdriveUITests" */;
+			buildPhases = (
+				9F2E50E921BA643D0083CAAA /* Sources */,
+				9F2E50EA21BA643D0083CAAA /* Frameworks */,
+				9F2E50EB21BA643D0083CAAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F2E50EF21BA643D0083CAAA /* PBXTargetDependency */,
+			);
+			name = WarpdriveUITests;
+			productName = WarpdriveUITests;
+			productReference = 9F2E50ED21BA643D0083CAAA /* WarpdriveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F2E50C821BA64350083CAAA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = ShevaKuilin;
+				TargetAttributes = {
+					9F2E50CF21BA64360083CAAA = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					9F2E50E121BA643D0083CAAA = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 9F2E50CF21BA64360083CAAA;
+					};
+					9F2E50EC21BA643D0083CAAA = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 9F2E50CF21BA64360083CAAA;
+					};
+				};
+			};
+			buildConfigurationList = 9F2E50CB21BA64350083CAAA /* Build configuration list for PBXProject "Warpdrive" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F2E50C721BA64350083CAAA;
+			productRefGroup = 9F2E50D121BA64360083CAAA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F2E50CF21BA64360083CAAA /* Warpdrive */,
+				9F2E50E121BA643D0083CAAA /* WarpdriveTests */,
+				9F2E50EC21BA643D0083CAAA /* WarpdriveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F2E50CE21BA64360083CAAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F2E50D821BA643D0083CAAA /* Assets.xcassets in Resources */,
+				9F2E50DB21BA643D0083CAAA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F2E50E021BA643D0083CAAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F2E50EB21BA643D0083CAAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		610E3E1B598553A6420F8855 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Warpdrive-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F2E50CC21BA64360083CAAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F2E50D621BA64360083CAAA /* ViewController.swift in Sources */,
+				9F2E50D421BA64360083CAAA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F2E50DE21BA643D0083CAAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F2E50E721BA643D0083CAAA /* WarpdriveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F2E50E921BA643D0083CAAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F2E50F221BA643D0083CAAA /* WarpdriveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F2E50E421BA643D0083CAAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F2E50CF21BA64360083CAAA /* Warpdrive */;
+			targetProxy = 9F2E50E321BA643D0083CAAA /* PBXContainerItemProxy */;
+		};
+		9F2E50EF21BA643D0083CAAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F2E50CF21BA64360083CAAA /* Warpdrive */;
+			targetProxy = 9F2E50EE21BA643D0083CAAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9F2E50D921BA643D0083CAAA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F2E50DA21BA643D0083CAAA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9F2E50F421BA643D0083CAAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9F2E50F521BA643D0083CAAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		9F2E50F721BA643D0083CAAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89E0D11D869062DA579DC904 /* Pods-Warpdrive.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Warpdrive/Warpdrive.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Warpdrive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SK.Warpdrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		9F2E50F821BA643D0083CAAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9A7BCFD37F07E411AA7D13C /* Pods-Warpdrive.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Warpdrive/Warpdrive.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Warpdrive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SK.Warpdrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		9F2E50FA21BA643D0083CAAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WarpdriveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SK.WarpdriveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Warpdrive.app/Contents/MacOS/Warpdrive";
+			};
+			name = Debug;
+		};
+		9F2E50FB21BA643D0083CAAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WarpdriveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SK.WarpdriveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Warpdrive.app/Contents/MacOS/Warpdrive";
+			};
+			name = Release;
+		};
+		9F2E50FD21BA643D0083CAAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WarpdriveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SK.WarpdriveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = Warpdrive;
+			};
+			name = Debug;
+		};
+		9F2E50FE21BA643D0083CAAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WarpdriveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SK.WarpdriveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = Warpdrive;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F2E50CB21BA64350083CAAA /* Build configuration list for PBXProject "Warpdrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F2E50F421BA643D0083CAAA /* Debug */,
+				9F2E50F521BA643D0083CAAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F2E50F621BA643D0083CAAA /* Build configuration list for PBXNativeTarget "Warpdrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F2E50F721BA643D0083CAAA /* Debug */,
+				9F2E50F821BA643D0083CAAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F2E50F921BA643D0083CAAA /* Build configuration list for PBXNativeTarget "WarpdriveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F2E50FA21BA643D0083CAAA /* Debug */,
+				9F2E50FB21BA643D0083CAAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F2E50FC21BA643D0083CAAA /* Build configuration list for PBXNativeTarget "WarpdriveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F2E50FD21BA643D0083CAAA /* Debug */,
+				9F2E50FE21BA643D0083CAAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F2E50C821BA64350083CAAA /* Project object */;
+}
