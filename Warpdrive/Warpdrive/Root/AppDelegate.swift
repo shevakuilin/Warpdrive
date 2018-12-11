@@ -31,29 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate  {
 
 private extension AppDelegate {
     private func initMenu() {
-//        let menuItem1 = NSMenuItem(title: "Juejin.im", action: #selector(testTouchAction), keyEquivalent: "A")
-//        menu.addItem(menuItem1)
-//        let menuItem2 = NSMenuItem(title: "SegmentFault", action: #selector(testTouchAction), keyEquivalent: "B")
-//        menu.addItem(menuItem2)
-//
-//        let submenu = NSMenu(title: "Submenu")
-//        submenu.addItem(withTitle: "[译] 究竟什么是DOM？", action: #selector(testTouchAction), keyEquivalent: "1")
-//        menu.setSubmenu(submenu, for: menuItem1)
-//
-//        submenu.addItem(withTitle: "200行代码实现简版react🔥", action: #selector(testTouchAction), keyEquivalent: "2")
-//        menu.setSubmenu(submenu, for: menuItem1)
-//
-//        submenu.addItem(withTitle: "如何安全地读写深度嵌套的对象？", action: #selector(testTouchAction), keyEquivalent: "3")
-//        menu.setSubmenu(submenu, for: menuItem1)
-//
-//        submenu.addItem(withTitle: "说说在 Vue.js 中如何实现组件间通信（高级篇）", action: #selector(testTouchAction), keyEquivalent: "4")
-//        menu.setSubmenu(submenu, for: menuItem1)
-//
-//        submenu.addItem(withTitle: "WebSocket 快速入门", action: #selector(testTouchAction), keyEquivalent: "5")
-//        menu.setSubmenu(submenu, for: menuItem1)
-        
         menu.addItem(withTitle: "添加的站点将在这里显示", action: nil, keyEquivalent: "")
-//        menu.addItem(withTitle: "测试", action: #selector(testTouchAction), keyEquivalent: "")
 
         menu.addItem(.separator())
         
@@ -78,12 +56,8 @@ private extension AppDelegate {
             self.closePopover()
             self.updateMenuList()
         }
-        popover.contentViewController = addWebsiteVC//addWebsiteVC.loadFromStoryboard()
+        popover.contentViewController = addWebsiteVC
     }
-    
-//    @objc private func testTouchAction() {
-//        NSWorkspace.shared.open(NSURL(string: "https://juejin.im/post/5c0a2ea4f265da616c656ace")! as URL)
-//    }
 }
 
 private extension AppDelegate {
