@@ -108,6 +108,9 @@ private extension SKAddWebsiteViewController {
             self.websiteTextField.textColor = .red
             return true
         }
+        if self.websiteTextField.stringValue == "网址不能为空" || self.webNameTextField.stringValue == "请填写站点名称" {
+            return true
+        }
         return false
     }
 }
