@@ -18,10 +18,12 @@ class AppDelegate: NSObject, NSApplicationDelegate  {
     private var website: String?    /// 网站
     private var webName: String?    /// 站点名称
     private var websiteIconUrl: String? /// 网站icon
+    private var websiteDataList: [[String : String]]? /// 网站列表数据
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        initMenu()    /// 初始化菜单栏
-        initPopover() /// 初始化弹窗
+        initMenu()
+        initPopover()
+        loadWebsiteData()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -30,6 +32,24 @@ class AppDelegate: NSObject, NSApplicationDelegate  {
 }
 
 private extension AppDelegate {
+    /// 初始化网站列表数据
+    private func loadWebsiteData() {
+        websiteDataList = SKWebsiteDataManager.readData()
+        guard let dataList = websiteDataList else {
+            return
+        }
+        guard dataList.count > 0 else {
+            return
+        }
+        for dic in dataList {
+            website = dic["website"]
+            webName = dic["webName"]
+            websiteIconUrl = dic["webIcon"]
+            updateMenuList()
+        }
+    }
+    
+    /// 初始化菜单栏
     private func initMenu() {
         menu.addItem(withTitle: "添加的站点将在这里显示", action: nil, keyEquivalent: "")
 
@@ -47,6 +67,7 @@ private extension AppDelegate {
         }
     }
     
+    /// 初始化弹窗
     private func initPopover() {
         let addWebsiteVC = SKAddWebsiteViewController.loadFromStoryboard()
         addWebsiteVC.addCompletionDelegate.delegate(to: self) { (self, arg1) in
@@ -107,6 +128,16 @@ private extension AppDelegate {
         menu.insertItem(withTitle: title, action: #selector(menuItemAction), keyEquivalent: "", at: 0)
         
         /// TODO: 保存到沙盒，下次启动直接从沙盒中读取内容
+        var dic = [String:String]()
+        dic["website"] = website
+        dic["webName"] = webName
+        dic["webIcon"] = websiteIconUrl
+        guard let dataList = websiteDataList else {
+            return
+        }
+        if !dataList.contains(dic) {
+            SKWebsiteDataManager.saveData(website: website, webName: webName, webIcon: websiteIconUrl)
+        }
     }
     
     /// 点击菜单栏选项，打开浏览器跳转
