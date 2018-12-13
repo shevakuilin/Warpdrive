@@ -147,7 +147,11 @@ private extension AppDelegate {
         let item = NSMenuItem(title: title, action: #selector(menuItemAction), keyEquivalent: "")
         if let iconUrl = websiteIconUrl {
             if let imageData = Data(base64Encoded: iconUrl){
-                item.image = NSImage(data: imageData)
+                guard let image = NSImage(data: imageData) else {
+                    return
+                }
+                
+                item.image = resize(image: image, w: 18, h: 18)
             }
         }
         menu.insertItem(item, at: 0)
@@ -177,3 +181,18 @@ private extension AppDelegate {
     }
 }
 
+private extension AppDelegate {
+    /// 修改图片尺寸以适应菜单栏大小
+    private func resize(image: NSImage, w: Int, h: Int) -> NSImage? {
+        let destSize = NSMakeSize(CGFloat(w), CGFloat(h))
+        let newImage = NSImage(size: destSize)
+        newImage.lockFocus()
+        image.draw(in: NSMakeRect(0, 0, destSize.width, destSize.height), from: NSMakeRect(0, 0, image.size.width, image.size.height), operation: .sourceOver, fraction: CGFloat(1))
+        newImage.unlockFocus()
+        newImage.size = destSize
+        guard let tiffRepresentation = newImage.tiffRepresentation else {
+            return nil
+        }
+        return NSImage(data: tiffRepresentation)
+    }
+}

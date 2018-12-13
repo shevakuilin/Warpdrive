@@ -51,7 +51,7 @@ class SKAddWebsiteViewController: NSViewController {
     /// 点击上传图片
     @IBAction func clickUploadImage(_ sender: Any) {
         let openPanel = NSOpenPanel()
-        openPanel.prompt = "选择图片，目前仅支持png/jpeg/jpg格式图片"
+        openPanel.prompt = "选择图片，目前仅支持png、jpeg和jpg格式图片"
         openPanel.allowedFileTypes = ["png", "jpeg", "jpg"]
         openPanel.directoryURL = nil
         
@@ -67,7 +67,9 @@ class SKAddWebsiteViewController: NSViewController {
                     let fileHandle = try FileHandle(forReadingFrom: fileUrl)
                     let imageData = fileHandle.readDataToEndOfFile()
                     strongSelf.webIcon.image = NSImage(data: imageData)
-                    let fileContext = String(data: imageData, encoding: String.Encoding.utf8)
+//                    let fileContext = String(data: imageData, encoding: .utf8)
+                    
+                    let fileContext = imageData.base64EncodedString(options: Data.Base64EncodingOptions())//imageData.map { String(format: "%02hhx", $0) }.joined()
                     strongSelf.webIconDataStr = fileContext
                 } catch {
                     
