@@ -56,7 +56,16 @@ private extension AppDelegate {
         menu.addItem(.separator())
         
         menu.addItem(withTitle: "添加站点", action: #selector(addWebsite(sender:)), keyEquivalent: "A")
-        menu.addItem(withTitle: "设置", action: #selector(setting), keyEquivalent: ",")
+        
+        let settingItem = NSMenuItem(title: "设置", action: #selector(setting), keyEquivalent: "")
+        menu.addItem(settingItem)
+        
+        let subMenu = NSMenu()
+        subMenu.addItem(withTitle: "编辑站点", action: #selector(websiteEdit), keyEquivalent: "")
+        subMenu.addItem(.separator())
+        subMenu.addItem(withTitle: "偏好设置", action: #selector(preferenceSetting), keyEquivalent: "")
+        menu.setSubmenu(subMenu, for: settingItem)
+        
         menu.addItem(.separator()) /// 分隔符
         menu.addItem(withTitle: "退出", action: #selector(quitApplication), keyEquivalent: "Q")
 
@@ -96,6 +105,16 @@ private extension AppDelegate {
     @objc private func addWebsite(sender: NSMenuItem) {
         showAddWebsitePopover(sender: sender)
     }
+    
+    /// 偏好设置
+    @objc private func preferenceSetting() {
+        
+    }
+    
+    /// 编辑站点
+    @objc private func websiteEdit() {
+        
+    }
 }
 
 private extension AppDelegate {
@@ -125,7 +144,13 @@ private extension AppDelegate {
         guard let title = self.webName else {
             return
         }
-        menu.insertItem(withTitle: title, action: #selector(menuItemAction), keyEquivalent: "", at: 0)
+        let item = NSMenuItem(title: title, action: #selector(menuItemAction), keyEquivalent: "")
+        if let iconUrl = websiteIconUrl {
+            if let imageData = Data(base64Encoded: iconUrl){
+                item.image = NSImage(data: imageData)
+            }
+        }
+        menu.insertItem(item, at: 0)
         
         /// TODO: 保存到沙盒，下次启动直接从沙盒中读取内容
         var dic = [String:String]()

@@ -12,8 +12,10 @@ import Cocoa
 
 class SKAddWebsiteViewController: NSViewController {
 
-    @IBOutlet weak var websiteTextField: NSTextField! /// 网址
-    @IBOutlet weak var webNameTextField: NSTextField! /// 站点名称
+    @IBOutlet weak var websiteTextField: NSTextField!   /// 网址
+    @IBOutlet weak var webNameTextField: NSTextField!   /// 站点名称
+    @IBOutlet weak var webIcon: NSButton!               /// 网站icon
+    private var webIconDataStr: String?                 /// 网站icon图片data字符
     
     public var addCompletionDelegate = Delegated<(String, String, String), Void>() /// 添加站点完成回调
     
@@ -34,7 +36,7 @@ class SKAddWebsiteViewController: NSViewController {
             return
         }
         if addCompletionDelegate.isDelegateSet {
-            addCompletionDelegate.call((self.websiteTextField.stringValue, self.webNameTextField.stringValue, ""))
+            addCompletionDelegate.call((self.websiteTextField.stringValue, self.webNameTextField.stringValue, self.webIconDataStr ?? ""))
         }
 //        updateMenuList { [weak self] (completion) in
 //            guard let strongSelf = self else {
@@ -48,6 +50,30 @@ class SKAddWebsiteViewController: NSViewController {
     
     /// 点击上传图片
     @IBAction func clickUploadImage(_ sender: Any) {
+        let openPanel = NSOpenPanel()
+        openPanel.prompt = "选择图片，目前仅支持png/jpeg/jpg格式图片"
+        openPanel.allowedFileTypes = ["png", "jpeg", "jpg"]
+        openPanel.directoryURL = nil
+        
+        openPanel.beginSheetModal(for: NSApplication.shared.keyWindow!) { [weak self] (returnCode) in
+            guard let strongSelf = self else {
+                return
+            }
+            if returnCode.rawValue == 1 {
+                guard let fileUrl = openPanel.urls.first else {
+                    return
+                }
+                do {
+                    let fileHandle = try FileHandle(forReadingFrom: fileUrl)
+                    let imageData = fileHandle.readDataToEndOfFile()
+                    strongSelf.webIcon.image = NSImage(data: imageData)
+                    let fileContext = String(data: imageData, encoding: String.Encoding.utf8)
+                    strongSelf.webIconDataStr = fileContext
+                } catch {
+                    
+                }
+            }
+        }
     }
     
 //    /// 监听鼠标点击区域不在弹窗范围内，弹窗消失
@@ -66,36 +92,6 @@ class SKAddWebsiteViewController: NSViewController {
 }
 
 private extension SKAddWebsiteViewController {
-    /// 关闭弹窗
-//    private func closePopover() {
-//        guard let appDelegate: AppDelegate = NSApplication.shared.delegate as? AppDelegate else {
-//            return
-//        }
-//        appDelegate.popover.close()
-//    }
-//
-//    /// 更新菜单列表
-//    private func updateMenuList(completion: @escaping (Bool) -> ()) {
-//        guard !textFieldErrorHandle() else {
-//            completion(false)
-//            return
-//        }
-//        guard let appDelegate: AppDelegate = NSApplication.shared.delegate as? AppDelegate else {
-//            completion(false)
-//            return
-//        }
-//
-//        let menu = appDelegate.menu
-//        menu.removeItem(at: 0) /// 先移除顶部占位
-//        menu.insertItem(withTitle: self.webNameTextField.stringValue, action: #selector(ssss), keyEquivalent: "1", at: 0)
-//        completion(true)
-//    }
-//
-//    /// 菜单选项跳转事件
-//    @objc private func ssss() {
-//        NSWorkspace.shared.open(NSURL(string: self.websiteTextField.stringValue)! as URL)
-//    }
-    
     /// 错误状态处理
     private func textFieldErrorHandle() -> Bool {
         if self.websiteTextField.stringValue == "" {

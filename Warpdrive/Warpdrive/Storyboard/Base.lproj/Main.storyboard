@@ -712,6 +712,7 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="webIcon" destination="9LV-7F-Fxq" id="HKz-d5-H4N"/>
                         <outlet property="webNameTextField" destination="t6E-Am-Fvu" id="mNm-SK-sdt"/>
                         <outlet property="websiteTextField" destination="u4x-H0-x1B" id="JEN-zI-PQb"/>
                     </connections>
