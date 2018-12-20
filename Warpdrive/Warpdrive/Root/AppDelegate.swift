@@ -56,6 +56,8 @@ private extension AppDelegate {
         let subMenu = NSMenu()
         subMenu.addItem(withTitle: "编辑站点", action: #selector(websiteEdit), keyEquivalent: "")
         subMenu.addItem(.separator())
+        subMenu.addItem(withTitle: "清空站点", action: #selector(cleanAllWebsite), keyEquivalent: "")
+        subMenu.addItem(.separator())
         subMenu.addItem(withTitle: "偏好设置", action: #selector(preferenceSetting), keyEquivalent: "")
         menu.setSubmenu(subMenu, for: settingItem)
         
@@ -112,6 +114,16 @@ private extension AppDelegate {
     /// 编辑站点
     @objc private func websiteEdit() {
         
+    }
+    
+    /// 清空站点
+    @objc private func cleanAllWebsite() {
+        /// 清除全部数据
+        SKWebsiteDataManager.removeAllData()
+        /// 清除全部菜单子项
+        menu.removeAllItems()
+        /// 初始化菜单
+        initMenu()
     }
 }
 
@@ -173,6 +185,11 @@ private extension AppDelegate {
                 }
             }
         }
+    }
+    
+    /// 恢复默认菜单列表
+    private func restoreDefaultMenuList() {
+        
     }
     
     /// 点击菜单栏选项，打开浏览器跳转
