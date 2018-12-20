@@ -28,6 +28,13 @@ class SKAddWebsiteViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        setMouseAction()
+        self.websiteTextField.delegate = self
+        self.webNameTextField.delegate = self
+    }
+    
+    override func viewDidDisappear() {
+        super.viewDidDisappear()
+        cleanData()
     }
     
     /// 点击添加按钮
@@ -98,34 +105,41 @@ class SKAddWebsiteViewController: NSViewController {
 }
 
 private extension SKAddWebsiteViewController {
+    /// 清空页面数据
+    private func cleanData() {
+        websiteTextField.resignFirstResponder()
+        websiteTextField.attributedStringValue = NSAttributedString(string: "")
+        webNameTextField.resignFirstResponder()
+        webNameTextField.attributedStringValue = NSAttributedString(string: "")
+        webIcon.image = nil
+    }
+    
     /// 错误状态处理
     private func textFieldErrorHandle() -> Bool {
         if self.websiteTextField.stringValue == "" {
-            self.websiteTextField.stringValue = "网址不能为空"
-            self.websiteTextField.textColor = .red
+            self.websiteTextField.placeholderAttributedString = kAttributedStyle("网址不能为空", self.websiteTextField.font!, kColor(88, 86, 92), .left, 5)
             return true
         }
         if self.webNameTextField.stringValue == "" {
-            self.webNameTextField.stringValue = "请填写站点名称"
-            self.websiteTextField.textColor = .red
+            self.webNameTextField.placeholderAttributedString = kAttributedStyle("请填写站点名称", self.websiteTextField.font!, kColor(88, 86, 92), .left, 5)
             return true
         }
-        if self.websiteTextField.stringValue == "网址不能为空" || self.webNameTextField.stringValue == "请填写站点名称" {
+        if self.websiteTextField.placeholderAttributedString?.string == "网址不能为空" || self.webNameTextField.placeholderAttributedString?.string == "请填写站点名称" {
             return true
         }
         return false
     }
 }
 
-extension SKAddWebsiteViewController: NSControlTextEditingDelegate {
+extension SKAddWebsiteViewController: NSTextFieldDelegate {
     func controlTextDidBeginEditing(_ obj: Notification) {
         guard let field = obj.object as? NSTextField else {
             return
         }
         if field == self.websiteTextField {
-            self.websiteTextField.textColor = .white
+            self.websiteTextField.placeholderAttributedString = kAttributedStyle("网址", self.websiteTextField.font!, kColor(88, 86, 92), .left, 5)
         } else {
-            self.webNameTextField.textColor = .white
+            self.webNameTextField.placeholderAttributedString = kAttributedStyle("站点名称", self.websiteTextField.font!, kColor(88, 86, 92), .left, 5)
         }
     }
 }
