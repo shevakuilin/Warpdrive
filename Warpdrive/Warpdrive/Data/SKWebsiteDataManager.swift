@@ -27,41 +27,50 @@ class SKWebsiteDataManager: NSObject {
 //    }
     
     /// 保存数据至本地沙盒
-    class func saveData(website: String?, webName: String?, webIcon: String?) {
-        guard website != "" && website != nil else {
+    class func saveData(websiteInfo: SKWebsiteInfo) {
+        guard websiteInfo.website != "" && websiteInfo.website != nil else {
             printLog("保存网站列表数据失败，站点名称不能为空")
             return
         }
-        guard webName != "" && website != nil else {
+        guard websiteInfo.webName != "" && websiteInfo.website != nil else {
             printLog("保存网站列表数据失败，网站地址不能为空")
             return
         }
-        var dic = [String:String]()
-        dic["website"] = website
-        dic["webName"] = webName
-        dic["webIcon"] = webIcon
+        let info = websiteInfo
         
         /// 读取本地已存入的数据列表
-        var dataList = readData() ?? [[String : String]]()
+        var dataList = readData()
         /// 添加到列表末尾
-        dataList.append(dic)
+        dataList.append(info)
         
         /// 保存数据至本地
         resetData(dataList: dataList)
         printLog("保存网站列表数据成功")
     }
     
+    /// 更新本地沙河的网站列表数据，并返回一个含有新插入数据的数据列表
+    class func updateData(websiteInfo: SKWebsiteInfo) -> [SKWebsiteInfo] {
+        saveData(websiteInfo: websiteInfo)
+        return readData()
+    }
+    
     /// 重置本地沙盒的网站列表数据
-    class func resetData(dataList: [[String:String]]) {
-        UserDefaults.standard.set(dataList, forKey: "DataList")
+    class func resetData(dataList: [SKWebsiteInfo]) {
+        let list = dataList.map { (info) -> [String:String] in
+            return SKConvert.convertWebsiteInfoToDic(websiteInfo: info)
+        }
+        UserDefaults.standard.set(list, forKey: "DataList")
         UserDefaults.standard.synchronize()
         printLog("本地沙盒的网站列表数据重置成功")
     }
     
     /// 读取网站列表数据
-    class func readData() -> [[String:String]]? {
+    class func readData() -> [SKWebsiteInfo] {
         let dataList: [[String:String]] = UserDefaults.standard.object(forKey: "DataList") as? [[String : String]] ?? [[String:String]]()
-        return dataList
+        let convertDataList = dataList.map { (result) -> SKWebsiteInfo in
+            return SKConvert.convertDicToWebsiteInfo(dic: result)
+        }
+        return convertDataList
     }
     
     /// 清除全部网站列表数据
@@ -78,8 +87,11 @@ class SKWebsiteDataManager: NSObject {
             return
         }
         dataList.remove(at: index)
+        let filterDataList = dataList.map { (result) -> SKWebsiteInfo in
+            return SKConvert.convertDicToWebsiteInfo(dic: result)
+        }
         /// 重新覆盖本地数据
-        resetData(dataList: dataList)
+        resetData(dataList: filterDataList)
         printLog("清除制定下标的网站列表数据成功")
     }
     
@@ -99,7 +111,10 @@ class SKWebsiteDataManager: NSObject {
                 }
             }
         }
-        resetData(dataList: dataList)
+        let filterDataList = dataList.map { (result) -> SKWebsiteInfo in
+            return SKConvert.convertDicToWebsiteInfo(dic: result)
+        }
+        resetData(dataList: filterDataList)
         printLog("清除指定站点名称的列表数据成功")
     }
     
