@@ -17,7 +17,7 @@ class SKAddWebsiteViewController: NSViewController {
     @IBOutlet weak var webIcon: NSButton!               /// 网站icon
     private var webIconDataStr: String?                 /// 网站icon图片data字符
     
-    public var addCompletionDelegate = Delegated<(String, String, String), Void>() /// 添加站点完成回调
+    public var addCompletionDelegate = Delegated<SKWebsiteInfo, Void>() /// 添加站点完成回调
     
     class func loadFromStoryboard() -> SKAddWebsiteViewController {
         let stroyboard = NSStoryboard(name: "Main", bundle: nil)
@@ -36,7 +36,11 @@ class SKAddWebsiteViewController: NSViewController {
             return
         }
         if addCompletionDelegate.isDelegateSet {
-            addCompletionDelegate.call((self.websiteTextField.stringValue, self.webNameTextField.stringValue, self.webIconDataStr ?? ""))
+            let websiteInfo = SKWebsiteInfo()
+            websiteInfo.website = self.websiteTextField.stringValue
+            websiteInfo.webName = self.webNameTextField.stringValue
+            websiteInfo.websiteIconUrl = self.webIconDataStr
+            addCompletionDelegate.call(websiteInfo)
         }
 //        updateMenuList { [weak self] (completion) in
 //            guard let strongSelf = self else {
