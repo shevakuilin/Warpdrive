@@ -25,3 +25,29 @@ public func printLog<T>(_ message: T,
     print("文件位置 => [\((file as NSString).lastPathComponent) \(method):] - [Line \(line)], 输出内容 => 「 \(message) 」")
     #endif
 }
+
+/** 格式化富文本
+ *
+ *  @param string       字符串
+ *  @param font         字体size
+ *  @param color        字体颜色
+ *  @param alignment    文本水平位置
+ *
+ */
+public func kAttributedStyle(_ string: String?,
+                             _ font: NSFont,
+                             _ color: NSColor = .black,
+                             _ alignment: NSTextAlignment = .left,
+                             _ lineSpacing: CGFloat = 0) -> NSAttributedString {
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.alignment = alignment
+    if lineSpacing > 0 {
+        paragraphStyle.lineSpacing = lineSpacing
+    }
+    return NSAttributedString(string: string ?? "",
+                              attributes: [
+                                NSAttributedString.Key.font: font,
+                                NSAttributedString.Key.foregroundColor: color,
+                                NSAttributedString.Key.paragraphStyle: paragraphStyle
+        ])
+}
