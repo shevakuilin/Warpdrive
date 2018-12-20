@@ -168,7 +168,10 @@ private extension AppDelegate {
                         item.image = resize(image: image, w: 18, h: 18)
                     }
                 }
+            } else {
+                item.image = NSImage(named: "link")
             }
+            
             return item
         }
         return nil
