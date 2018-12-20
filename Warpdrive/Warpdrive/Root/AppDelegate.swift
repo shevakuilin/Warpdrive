@@ -12,13 +12,11 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate  {
 
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength) /// 状态栏
-    private let menu = NSMenu() /// 菜单栏
+    private let menu = NSMenu()         /// 菜单栏
     private let popover = NSPopover()   /// 弹窗
     
-    private var website: String?    /// 网站
-    private var webName: String?    /// 站点名称
-    private var websiteIconUrl: String? /// 网站icon
-    private var websiteDataList: [[String : String]]? /// 网站列表数据
+    private var websiteDataList: [SKWebsiteInfo]? /// 网站列表数据
+    private lazy var websiteInfo = SKWebsiteInfo().then { _ in }    /// 网站信息
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         initMenu()
@@ -41,12 +39,7 @@ private extension AppDelegate {
         guard dataList.count > 0 else {
             return
         }
-        for dic in dataList {
-            website = dic["website"]
-            webName = dic["webName"]
-            websiteIconUrl = dic["webIcon"]
-            updateMenuList()
-        }
+        updateMenuList(websiteDataList)
     }
     
     /// 初始化菜单栏
@@ -79,12 +72,17 @@ private extension AppDelegate {
     /// 初始化弹窗
     private func initPopover() {
         let addWebsiteVC = SKAddWebsiteViewController.loadFromStoryboard()
-        addWebsiteVC.addCompletionDelegate.delegate(to: self) { (self, arg1) in
-            self.website = arg1.0
-            self.webName = arg1.1
-            self.websiteIconUrl = arg1.2
+        addWebsiteVC.addCompletionDelegate.delegate(to: self) { (self, info) in
+            /// 关闭弹窗
             self.closePopover()
-            self.updateMenuList()
+            /// 更新数据
+            self.websiteDataList = SKWebsiteDataManager.updateData(websiteInfo: info)
+            /// 更新菜单列表
+            guard let dataList = self.websiteDataList else {
+                return
+            }
+//            dataList.append(info)
+            self.updateMenuList(dataList)
         }
         popover.contentViewController = addWebsiteVC
     }
@@ -136,42 +134,55 @@ private extension AppDelegate {
         }
     }
     
+    /// 创建一个菜单子项
+    private func creatMenuItem(info: SKWebsiteInfo) -> NSMenuItem? {
+        if let title = info.webName {
+            let item = NSMenuItem(title: title, action: #selector(menuItemAction), keyEquivalent: "")
+            if let iconUrl = info.websiteIconUrl {
+                if let imageData = Data(base64Encoded: iconUrl) {
+                    if let image = NSImage(data: imageData) {
+                        item.image = resize(image: image, w: 18, h: 18)
+                    }
+                }
+            }
+            return item
+        }
+        return nil
+    }
+    
     /// 更新菜单列表
-    private func updateMenuList() {
+    private func updateMenuList(_ dataList: [SKWebsiteInfo]?) {
         if menu.items.first?.title == "添加的站点将在这里显示" {
             menu.removeItem(at: 0) /// 先移除顶部占位
         }
-        guard let title = self.webName else {
+        guard let newItemList = dataList else {
             return
         }
-        let item = NSMenuItem(title: title, action: #selector(menuItemAction), keyEquivalent: "")
-        if let iconUrl = websiteIconUrl {
-            if let imageData = Data(base64Encoded: iconUrl){
-                guard let image = NSImage(data: imageData) else {
-                    return
+        for newItem in newItemList {
+            var isExist = false
+            for menuItem in menu.items {
+                if menuItem.title == newItem.webName {
+                    isExist = true
+                    break
                 }
-                
-                item.image = resize(image: image, w: 18, h: 18)
             }
-        }
-        menu.insertItem(item, at: 0)
-        
-        /// TODO: 保存到沙盒，下次启动直接从沙盒中读取内容
-        var dic = [String:String]()
-        dic["website"] = website
-        dic["webName"] = webName
-        dic["webIcon"] = websiteIconUrl
-        guard let dataList = websiteDataList else {
-            return
-        }
-        if !dataList.contains(dic) {
-            SKWebsiteDataManager.saveData(website: website, webName: webName, webIcon: websiteIconUrl)
+            /// 如果当前菜单中不存在相同的子项，就插入菜单
+            if !isExist {
+                if let item = creatMenuItem(info: newItem) {
+                    menu.insertItem(item, at: 0)
+                }
+            }
         }
     }
     
     /// 点击菜单栏选项，打开浏览器跳转
-    @objc private func menuItemAction() {
-        guard let urlStr = self.website else {
+    @objc private func menuItemAction(sender: NSMenuItem) {
+        guard let dataList = websiteDataList else {
+            return
+        }
+        /// 过滤出于菜单子项相对应的链接
+        let websiteList = dataList.filter { $0.webName == sender.title }
+        guard let urlStr = websiteList.first?.website else {
             return
         }
         guard let url = URL(string: urlStr) else {
