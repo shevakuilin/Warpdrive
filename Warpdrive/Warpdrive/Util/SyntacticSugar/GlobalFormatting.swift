@@ -51,3 +51,19 @@ public func kAttributedStyle(_ string: String?,
                                 NSAttributedString.Key.paragraphStyle: paragraphStyle
         ])
 }
+
+/** 格式化NSColor [默认alpha]
+ *
+ *  @param r    red值
+ *  @param g    green值
+ *  @param b    blue值
+ *  @param a    alpha值
+ *
+ */
+public func kColor(_ r: CGFloat,
+                   _ g: CGFloat,
+                   _ b: CGFloat,
+                   _ a: CGFloat = 1.0) -> NSColor {
+    let denominatorRGB: CGFloat = 255.0
+    return NSColor(red: r/denominatorRGB, green: g/denominatorRGB, blue: b/denominatorRGB, alpha: a)
+}
