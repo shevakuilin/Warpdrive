@@ -118,12 +118,24 @@ private extension AppDelegate {
     
     /// 清空站点
     @objc private func cleanAllWebsite() {
-        /// 清除全部数据
-        SKWebsiteDataManager.removeAllData()
-        /// 清除全部菜单子项
-        menu.removeAllItems()
-        /// 初始化菜单
-        initMenu()
+        let alert = NSAlert()
+        alert.messageText = "确认要清空列表中的站点吗？"
+        alert.informativeText = "注意：此操作将不可恢复"
+        alert.addButton(withTitle: "确认清除")
+        alert.addButton(withTitle: "取消")
+        alert.alertStyle = .warning
+        let action = alert.runModal()
+        if action == .alertFirstButtonReturn {
+            printLog("清空全部站点数据")
+            /// 清除全部数据
+            SKWebsiteDataManager.removeAllData()
+            /// 清除全部菜单子项
+            menu.removeAllItems()
+            /// 初始化菜单
+            initMenu()
+        } else if action == .alertSecondButtonReturn {
+            printLog("取消清空操作")
+        }
     }
 }
 
