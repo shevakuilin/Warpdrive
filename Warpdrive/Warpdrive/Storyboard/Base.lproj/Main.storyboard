@@ -881,6 +881,11 @@
                             <constraint firstItem="mb9-Xu-mc5" firstAttribute="top" secondItem="OYA-cc-XUl" secondAttribute="top" constant="20" id="qGx-Dj-EJU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webIconImageView" destination="hu1-3C-2eP" id="bWy-pf-HmX"/>
+                        <outlet property="webNameTextField" destination="77B-jE-xDu" id="CZV-e7-yRD"/>
+                        <outlet property="websiteTextField" destination="sQD-w9-H4I" id="Zrt-2P-74e"/>
+                    </connections>
                 </viewController>
                 <customObject id="kFR-UL-dIy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -958,7 +963,7 @@
                                             <rect key="frame" x="1" y="332" width="208" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="xdc-3d-GKU">
+                                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="xdc-3d-GKU">
                                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>

@@ -66,4 +66,18 @@ extension SKEditWebsiteLeftViewController: NSTableViewDelegate {
 
         return cell
     }
+    
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        guard dataList.count > 0 else {
+            return
+        }
+        let table = notification.object as! NSTableView
+        guard dataList.count > table.selectedRow else {
+            return
+        }
+        let info = dataList[table.selectedRow]
+        let userInfo = ["website": info.website, "webName": info.webName, "webIcon": info.websiteIconUrl]
+        /// 发送通知rightView同步显示当前选中站点信息
+        NotificationCenter.default.post(name: kNotificationName("SelectedWebname"), object: nil, userInfo: userInfo as [AnyHashable : Any])
+    }
 }

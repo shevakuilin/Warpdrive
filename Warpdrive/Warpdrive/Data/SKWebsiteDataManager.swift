@@ -48,7 +48,7 @@ class SKWebsiteDataManager: NSObject {
         printLog("保存网站列表数据成功")
     }
     
-    /// 更新本地沙河的网站列表数据，并返回一个含有新插入数据的数据列表
+    /// 更新本地沙盒的网站列表数据，并返回一个含有新插入数据的数据列表
     class func updateData(websiteInfo: SKWebsiteInfo) -> [SKWebsiteInfo] {
         saveData(websiteInfo: websiteInfo)
         return readData()
