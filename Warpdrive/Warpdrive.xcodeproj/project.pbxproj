@@ -16,6 +16,7 @@
 		9F6837C121BFD9A20056D3C6 /* SKWebsiteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6837C021BFD9A20056D3C6 /* SKWebsiteDataManager.swift */; };
 		9F6837C321C0A1F40056D3C6 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6837C221C0A1F40056D3C6 /* Then.swift */; };
 		9F6837C521C0A2150056D3C6 /* GlobalFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6837C421C0A2150056D3C6 /* GlobalFormatting.swift */; };
+		9FA9527C21CC997700769E88 /* SKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA9527B21CC997700769E88 /* SKConfig.swift */; };
 		9FD0E22221BEAC08002D83E3 /* SKAddWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD0E22121BEAC08002D83E3 /* SKAddWebsiteViewController.swift */; };
 		9FD0E22321BEB4C6002D83E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E50D921BA643D0083CAAA /* Main.storyboard */; };
 		9FD0E22621BEB9A7002D83E3 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD0E22521BEB9A7002D83E3 /* Delegate.swift */; };
@@ -58,6 +59,7 @@
 		9F6837C021BFD9A20056D3C6 /* SKWebsiteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKWebsiteDataManager.swift; sourceTree = "<group>"; };
 		9F6837C221C0A1F40056D3C6 /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		9F6837C421C0A2150056D3C6 /* GlobalFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFormatting.swift; sourceTree = "<group>"; };
+		9FA9527B21CC997700769E88 /* SKConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKConfig.swift; sourceTree = "<group>"; };
 		9FD0E22121BEAC08002D83E3 /* SKAddWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKAddWebsiteViewController.swift; sourceTree = "<group>"; };
 		9FD0E22521BEB9A7002D83E3 /* Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		C9A7BCFD37F07E411AA7D13C /* Pods-Warpdrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Warpdrive.release.xcconfig"; path = "Target Support Files/Pods-Warpdrive/Pods-Warpdrive.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				9F14A3CC21CB3A8E0058F34B /* SKConvert.swift */,
+				9FA9527B21CC997700769E88 /* SKConfig.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				9F14A3C921CB37E30058F34B /* SKWebsiteInfo.swift in Sources */,
 				9F6837C521C0A2150056D3C6 /* GlobalFormatting.swift in Sources */,
 				9FD0E22221BEAC08002D83E3 /* SKAddWebsiteViewController.swift in Sources */,
+				9FA9527C21CC997700769E88 /* SKConfig.swift in Sources */,
 				9F2E50D421BA64360083CAAA /* AppDelegate.swift in Sources */,
 				9F6837C321C0A1F40056D3C6 /* Then.swift in Sources */,
 				9F6837C121BFD9A20056D3C6 /* SKWebsiteDataManager.swift in Sources */,
