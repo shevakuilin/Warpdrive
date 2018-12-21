@@ -726,8 +726,8 @@
             <objects>
                 <splitViewController storyboardIdentifier="SKEditWebsiteViewController" id="sJ8-uj-bF1" customClass="SKEditWebsiteViewController" customModule="Warpdrive" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem id="Tep-22-Hl5"/>
-                        <splitViewItem id="CTD-al-Prp"/>
+                        <splitViewItem id="hr0-3P-KSx"/>
+                        <splitViewItem id="MyU-Pt-0Z2"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="ivq-sR-h1q">
                         <rect key="frame" x="0.0" y="0.0" width="550" height="500"/>
@@ -738,13 +738,13 @@
                     </splitView>
                     <connections>
                         <outlet property="splitView" destination="ivq-sR-h1q" id="xpL-y6-d7U"/>
-                        <segue destination="dUy-aD-zMl" kind="relationship" relationship="splitItems" id="goT-vo-ewc"/>
-                        <segue destination="3CD-OK-Rp9" kind="relationship" relationship="splitItems" id="k9E-oz-e5W"/>
+                        <segue destination="3CD-OK-Rp9" kind="relationship" relationship="splitItems" id="bJS-lx-Tnh"/>
+                        <segue destination="dUy-aD-zMl" kind="relationship" relationship="splitItems" id="WD1-W6-6MR"/>
                     </connections>
                 </splitViewController>
                 <customObject id="EK0-0i-PVk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-697" y="905"/>
+            <point key="canvasLocation" x="-697" y="940"/>
         </scene>
         <!--Edit Website Right View Controller-->
         <scene sceneID="jbM-rg-TcS">
@@ -904,14 +904,14 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="aCY-Ek-DeK" viewBased="YES" id="ofT-1V-0eW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="208" height="323"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="220" height="323"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn width="205" minWidth="40" maxWidth="1000" id="jh8-PY-iIz">
-                                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <tableColumn width="217" minWidth="40" maxWidth="1000" id="jh8-PY-iIz">
+                                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="当前站点">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -924,11 +924,11 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="bvq-dE-uRw">
-                                                                    <rect key="frame" x="1" y="1" width="205" height="17"/>
+                                                                    <rect key="frame" x="1" y="1" width="217" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="4Qs-BB-fe6">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="205" height="17"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="217" height="17"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="C8f-Tn-sKp">
                                                                                 <font key="font" metaFont="system"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -954,7 +954,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="349" id="V2p-kg-Qwr"/>
                                         </constraints>
-                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="qzI-yl-K5N">
+                                        <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="qzI-yl-K5N">
                                             <rect key="frame" x="1" y="332" width="208" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
@@ -963,7 +963,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <tableHeaderView key="headerView" id="aCY-Ek-DeK">
-                                            <rect key="frame" x="0.0" y="0.0" width="208" height="25"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="220" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
@@ -979,6 +979,9 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
+                                                <connections>
+                                                    <action selector="addButtonClick:" target="3CD-OK-Rp9" id="Jxu-r0-Qnu"/>
+                                                </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="p4p-iM-VzM">
                                                 <rect key="frame" x="20" y="0.0" width="21" height="21"/>
@@ -990,6 +993,9 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
+                                                <connections>
+                                                    <action selector="removeButtonClick:" target="3CD-OK-Rp9" id="3E0-Ka-HLs"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -1021,6 +1027,10 @@
                             <constraint firstAttribute="bottom" secondItem="bjb-dS-tqC" secondAttribute="bottom" id="xuc-GP-y86"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomToolView" destination="sKh-FK-w8K" id="ijv-WM-B1P"/>
+                        <outlet property="tableView" destination="ofT-1V-0eW" id="85E-o8-zvo"/>
+                    </connections>
                 </viewController>
                 <customObject id="F0C-cr-BeW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1029,7 +1039,7 @@
         <!--Window Controller-->
         <scene sceneID="4Dq-W2-BS6">
             <objects>
-                <windowController id="w6c-m5-fZ4" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="SKEditWebsiteWindowController" id="w6c-m5-fZ4" customClass="SKEditWebsiteWindowController" customModule="Warpdrive" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="编辑站点" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="1S9-wx-z43">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>

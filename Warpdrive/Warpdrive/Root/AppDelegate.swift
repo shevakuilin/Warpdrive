@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate  {
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength) /// 状态栏
     private let menu = NSMenu()         /// 菜单栏
     private let popover = NSPopover()   /// 弹窗
+    private var editWebsiteWindowController = SKEditWebsiteWindowController() /// 编辑网站弹窗
     
     private var websiteDataList: [SKWebsiteInfo]? /// 网站列表数据
     private lazy var websiteInfo = SKWebsiteInfo().then { _ in }    /// 网站信息
@@ -23,6 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate  {
         bootUp()
         initMenu()
         initPopover()
+        initEditWindow()
         loadWebsiteData()
     }
 
@@ -53,7 +55,13 @@ private extension AppDelegate {
 private extension AppDelegate {
     /// 初始化网站列表数据
     private func loadWebsiteData() {
-        websiteDataList = SKWebsiteDataManager.readData()
+        let localDataList = SKWebsiteDataManager.readData()
+        /// 倒序输出
+        var reverseList = [SKWebsiteInfo]()
+        for info in localDataList.reversed() {
+            reverseList.append(info)
+        }
+        websiteDataList = reverseList
         guard let dataList = websiteDataList else {
             return
         }
@@ -109,6 +117,10 @@ private extension AppDelegate {
         }
         popover.contentViewController = addWebsiteVC
     }
+    
+    private func initEditWindow() {
+        editWebsiteWindowController = SKEditWebsiteWindowController.loadFromNib()
+    }
 }
 
 private extension AppDelegate {
@@ -134,7 +146,8 @@ private extension AppDelegate {
     
     /// 编辑站点
     @objc private func websiteEdit() {
-//        let editWebsiteVc = SKEditWebsiteViewController.loadFromNib()
+        editWebsiteWindowController.dismissController(nil)
+        editWebsiteWindowController.showWindow(nil)
     }
     
     /// 清空站点

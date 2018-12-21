@@ -73,6 +73,12 @@ class SKWebsiteDataManager: NSObject {
         return convertDataList
     }
     
+    /// 读取网站列表数据数量
+    class func readDataCount() -> Int {
+        let data = readData()
+        return data.count
+    }
+    
     /// 清除全部网站列表数据
     class func removeAllData() {
         UserDefaults.standard.removeObject(forKey: "DataList")
