@@ -17,6 +17,11 @@
 		9F6837C321C0A1F40056D3C6 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6837C221C0A1F40056D3C6 /* Then.swift */; };
 		9F6837C521C0A2150056D3C6 /* GlobalFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6837C421C0A2150056D3C6 /* GlobalFormatting.swift */; };
 		9FA9527C21CC997700769E88 /* SKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA9527B21CC997700769E88 /* SKConfig.swift */; };
+		9FB5CC3021CCBA1F0022153F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB5CC2F21CCBA1F0022153F /* AppDelegate.swift */; };
+		9FB5CC3221CCBA1F0022153F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB5CC3121CCBA1F0022153F /* ViewController.swift */; };
+		9FB5CC3421CCBA220022153F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FB5CC3321CCBA220022153F /* Assets.xcassets */; };
+		9FB5CC3721CCBA220022153F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB5CC3521CCBA220022153F /* Main.storyboard */; };
+		9FB5CC3E21CCBAEC0022153F /* LauncherApplication.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9FB5CC2D21CCBA1E0022153F /* LauncherApplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9FD0E22221BEAC08002D83E3 /* SKAddWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD0E22121BEAC08002D83E3 /* SKAddWebsiteViewController.swift */; };
 		9FD0E22321BEB4C6002D83E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E50D921BA643D0083CAAA /* Main.storyboard */; };
 		9FD0E22621BEB9A7002D83E3 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD0E22521BEB9A7002D83E3 /* Delegate.swift */; };
@@ -40,6 +45,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9FB5CC3D21CCBACA0022153F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				9FB5CC3E21CCBAEC0022153F /* LauncherApplication.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		89E0D11D869062DA579DC904 /* Pods-Warpdrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Warpdrive.debug.xcconfig"; path = "Target Support Files/Pods-Warpdrive/Pods-Warpdrive.debug.xcconfig"; sourceTree = "<group>"; };
 		9F14A3C821CB37E30058F34B /* SKWebsiteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKWebsiteInfo.swift; sourceTree = "<group>"; };
@@ -60,6 +78,13 @@
 		9F6837C221C0A1F40056D3C6 /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		9F6837C421C0A2150056D3C6 /* GlobalFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFormatting.swift; sourceTree = "<group>"; };
 		9FA9527B21CC997700769E88 /* SKConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKConfig.swift; sourceTree = "<group>"; };
+		9FB5CC2D21CCBA1E0022153F /* LauncherApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LauncherApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FB5CC2F21CCBA1F0022153F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9FB5CC3121CCBA1F0022153F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9FB5CC3321CCBA220022153F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9FB5CC3621CCBA220022153F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9FB5CC3821CCBA220022153F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FB5CC3921CCBA220022153F /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
 		9FD0E22121BEAC08002D83E3 /* SKAddWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKAddWebsiteViewController.swift; sourceTree = "<group>"; };
 		9FD0E22521BEB9A7002D83E3 /* Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		C9A7BCFD37F07E411AA7D13C /* Pods-Warpdrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Warpdrive.release.xcconfig"; path = "Target Support Files/Pods-Warpdrive/Pods-Warpdrive.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +108,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9F2E50EA21BA643D0083CAAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FB5CC2A21CCBA1E0022153F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -142,6 +174,7 @@
 				9F2E50D221BA64360083CAAA /* Warpdrive */,
 				9F2E50E521BA643D0083CAAA /* WarpdriveTests */,
 				9F2E50F021BA643D0083CAAA /* WarpdriveUITests */,
+				9FB5CC2E21CCBA1F0022153F /* LauncherApplication */,
 				9F2E50D121BA64360083CAAA /* Products */,
 				955D4CB2C1E60BFFE31817F3 /* Pods */,
 				42522E2E16C9961267310243 /* Frameworks */,
@@ -154,6 +187,7 @@
 				9F2E50D021BA64360083CAAA /* Warpdrive.app */,
 				9F2E50E221BA643D0083CAAA /* WarpdriveTests.xctest */,
 				9F2E50ED21BA643D0083CAAA /* WarpdriveUITests.xctest */,
+				9FB5CC2D21CCBA1E0022153F /* LauncherApplication.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +231,19 @@
 				9F6837C021BFD9A20056D3C6 /* SKWebsiteDataManager.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		9FB5CC2E21CCBA1F0022153F /* LauncherApplication */ = {
+			isa = PBXGroup;
+			children = (
+				9FB5CC2F21CCBA1F0022153F /* AppDelegate.swift */,
+				9FB5CC3121CCBA1F0022153F /* ViewController.swift */,
+				9FB5CC3321CCBA220022153F /* Assets.xcassets */,
+				9FB5CC3521CCBA220022153F /* Main.storyboard */,
+				9FB5CC3821CCBA220022153F /* Info.plist */,
+				9FB5CC3921CCBA220022153F /* LauncherApplication.entitlements */,
+			);
+			path = LauncherApplication;
 			sourceTree = "<group>";
 		};
 		9FD0E21B21BEAAE3002D83E3 /* Root */ = {
@@ -268,6 +315,7 @@
 				9F2E50CC21BA64360083CAAA /* Sources */,
 				9F2E50CD21BA64360083CAAA /* Frameworks */,
 				9F2E50CE21BA64360083CAAA /* Resources */,
+				9FB5CC3D21CCBACA0022153F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -314,6 +362,23 @@
 			productReference = 9F2E50ED21BA643D0083CAAA /* WarpdriveUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		9FB5CC2C21CCBA1E0022153F /* LauncherApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FB5CC3C21CCBA220022153F /* Build configuration list for PBXNativeTarget "LauncherApplication" */;
+			buildPhases = (
+				9FB5CC2921CCBA1E0022153F /* Sources */,
+				9FB5CC2A21CCBA1E0022153F /* Frameworks */,
+				9FB5CC2B21CCBA1E0022153F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LauncherApplication;
+			productName = LauncherApplication;
+			productReference = 9FB5CC2D21CCBA1E0022153F /* LauncherApplication.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -336,6 +401,9 @@
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 9F2E50CF21BA64360083CAAA;
 					};
+					9FB5CC2C21CCBA1E0022153F = {
+						CreatedOnToolsVersion = 10.1;
+					};
 				};
 			};
 			buildConfigurationList = 9F2E50CB21BA64350083CAAA /* Build configuration list for PBXProject "Warpdrive" */;
@@ -352,6 +420,7 @@
 			projectRoot = "";
 			targets = (
 				9F2E50CF21BA64360083CAAA /* Warpdrive */,
+				9FB5CC2C21CCBA1E0022153F /* LauncherApplication */,
 				9F2E50E121BA643D0083CAAA /* WarpdriveTests */,
 				9F2E50EC21BA643D0083CAAA /* WarpdriveUITests */,
 			);
@@ -379,6 +448,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FB5CC2B21CCBA1E0022153F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FB5CC3421CCBA220022153F /* Assets.xcassets in Resources */,
+				9FB5CC3721CCBA220022153F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +520,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9FB5CC2921CCBA1E0022153F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FB5CC3221CCBA1F0022153F /* ViewController.swift in Sources */,
+				9FB5CC3021CCBA1F0022153F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -462,6 +549,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				9F2E50DA21BA643D0083CAAA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9FB5CC3521CCBA220022153F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FB5CC3621CCBA220022153F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -599,6 +694,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SK.Warpdrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -618,6 +714,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SK.Warpdrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
@@ -700,6 +797,46 @@
 			};
 			name = Release;
 		};
+		9FB5CC3A21CCBA220022153F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LauncherApplication/LauncherApplication.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LauncherApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = SK.LauncherApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		9FB5CC3B21CCBA220022153F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LauncherApplication/LauncherApplication.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LauncherApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = SK.LauncherApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -735,6 +872,15 @@
 			buildConfigurations = (
 				9F2E50FD21BA643D0083CAAA /* Debug */,
 				9F2E50FE21BA643D0083CAAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FB5CC3C21CCBA220022153F /* Build configuration list for PBXNativeTarget "LauncherApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FB5CC3A21CCBA220022153F /* Debug */,
+				9FB5CC3B21CCBA220022153F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
