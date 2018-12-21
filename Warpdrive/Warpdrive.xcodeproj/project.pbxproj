@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		9F14A3C921CB37E30058F34B /* SKWebsiteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F14A3C821CB37E30058F34B /* SKWebsiteInfo.swift */; };
 		9F14A3CD21CB3A8E0058F34B /* SKConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F14A3CC21CB3A8E0058F34B /* SKConvert.swift */; };
+		9F27153321CCF03F0038BB14 /* SKEditWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27153221CCF03F0038BB14 /* SKEditWebsiteViewController.swift */; };
+		9F27153921CD04430038BB14 /* SKEditWebsiteLeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27153821CD04430038BB14 /* SKEditWebsiteLeftViewController.swift */; };
+		9F27153B21CD04540038BB14 /* SKEditWebsiteRightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27153A21CD04540038BB14 /* SKEditWebsiteRightViewController.swift */; };
 		9F2E50D421BA64360083CAAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E50D321BA64360083CAAA /* AppDelegate.swift */; };
 		9F2E50D821BA643D0083CAAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E50D721BA643D0083CAAA /* Assets.xcassets */; };
 		9F2E50E721BA643D0083CAAA /* WarpdriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E50E621BA643D0083CAAA /* WarpdriveTests.swift */; };
@@ -62,6 +65,9 @@
 		89E0D11D869062DA579DC904 /* Pods-Warpdrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Warpdrive.debug.xcconfig"; path = "Target Support Files/Pods-Warpdrive/Pods-Warpdrive.debug.xcconfig"; sourceTree = "<group>"; };
 		9F14A3C821CB37E30058F34B /* SKWebsiteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKWebsiteInfo.swift; sourceTree = "<group>"; };
 		9F14A3CC21CB3A8E0058F34B /* SKConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKConvert.swift; sourceTree = "<group>"; };
+		9F27153221CCF03F0038BB14 /* SKEditWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKEditWebsiteViewController.swift; sourceTree = "<group>"; };
+		9F27153821CD04430038BB14 /* SKEditWebsiteLeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKEditWebsiteLeftViewController.swift; sourceTree = "<group>"; };
+		9F27153A21CD04540038BB14 /* SKEditWebsiteRightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKEditWebsiteRightViewController.swift; sourceTree = "<group>"; };
 		9F2E50D021BA64360083CAAA /* Warpdrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Warpdrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F2E50D321BA64360083CAAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F2E50D721BA643D0083CAAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,6 +172,16 @@
 				9FA9527B21CC997700769E88 /* SKConfig.swift */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		9F27153121CCF0180038BB14 /* EditWebsite */ = {
+			isa = PBXGroup;
+			children = (
+				9F27153221CCF03F0038BB14 /* SKEditWebsiteViewController.swift */,
+				9F27153821CD04430038BB14 /* SKEditWebsiteLeftViewController.swift */,
+				9F27153A21CD04540038BB14 /* SKEditWebsiteRightViewController.swift */,
+			);
+			path = EditWebsite;
 			sourceTree = "<group>";
 		};
 		9F2E50C721BA64350083CAAA = {
@@ -290,6 +306,7 @@
 		9FD0E22021BEABBB002D83E3 /* MenuFunction */ = {
 			isa = PBXGroup;
 			children = (
+				9F27153121CCF0180038BB14 /* EditWebsite */,
 				9FD0E21F21BEAB92002D83E3 /* AddWebsite */,
 			);
 			path = MenuFunction;
@@ -494,8 +511,11 @@
 			files = (
 				9FD0E22621BEB9A7002D83E3 /* Delegate.swift in Sources */,
 				9F14A3CD21CB3A8E0058F34B /* SKConvert.swift in Sources */,
+				9F27153321CCF03F0038BB14 /* SKEditWebsiteViewController.swift in Sources */,
 				9F14A3C921CB37E30058F34B /* SKWebsiteInfo.swift in Sources */,
 				9F6837C521C0A2150056D3C6 /* GlobalFormatting.swift in Sources */,
+				9F27153B21CD04540038BB14 /* SKEditWebsiteRightViewController.swift in Sources */,
+				9F27153921CD04430038BB14 /* SKEditWebsiteLeftViewController.swift in Sources */,
 				9FD0E22221BEAC08002D83E3 /* SKAddWebsiteViewController.swift in Sources */,
 				9FA9527C21CC997700769E88 /* SKConfig.swift in Sources */,
 				9F2E50D421BA64360083CAAA /* AppDelegate.swift in Sources */,
