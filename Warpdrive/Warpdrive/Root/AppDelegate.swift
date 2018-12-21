@@ -69,21 +69,21 @@ private extension AppDelegate {
 
         menu.addItem(.separator())
         
-        menu.addItem(withTitle: "添加站点", action: #selector(addWebsite(sender:)), keyEquivalent: "A")
+        menu.addItem(withTitle: "添加站点", action: #selector(addWebsite(sender:)), keyEquivalent: "a")
         
         let settingItem = NSMenuItem(title: "设置", action: #selector(setting), keyEquivalent: "")
         menu.addItem(settingItem)
         
         let subMenu = NSMenu()
-        subMenu.addItem(withTitle: "编辑站点", action: #selector(websiteEdit), keyEquivalent: "")
+        subMenu.addItem(withTitle: "编辑站点", action: #selector(websiteEdit), keyEquivalent: "e")
         subMenu.addItem(.separator())
-        subMenu.addItem(withTitle: "清空站点", action: #selector(cleanAllWebsite), keyEquivalent: "")
+        subMenu.addItem(withTitle: "清空站点", action: #selector(cleanAllWebsite), keyEquivalent: "c")
         subMenu.addItem(.separator())
-        subMenu.addItem(withTitle: "偏好设置", action: #selector(preferenceSetting), keyEquivalent: "")
+        subMenu.addItem(withTitle: "偏好设置", action: #selector(preferenceSetting), keyEquivalent: "s")
         menu.setSubmenu(subMenu, for: settingItem)
         
         menu.addItem(.separator()) /// 分隔符
-        menu.addItem(withTitle: "退出", action: #selector(quitApplication), keyEquivalent: "Q")
+        menu.addItem(withTitle: "退出", action: #selector(quitApplication), keyEquivalent: "q")
 
         statusItem.menu = menu
         if let button = statusItem.button {
