@@ -66,7 +66,7 @@ private extension AppDelegate {
 
         statusItem.menu = menu
         if let button = statusItem.button {
-            button.image = NSImage(named: "nav_icon")
+            button.image = SKConfig.gainStatusItemButtonIcon()
 //            button.action = #selector(closePopover)
         }
     }
@@ -169,7 +169,7 @@ private extension AppDelegate {
                     }
                 }
             } else {
-                item.image = NSImage(named: "link")
+                item.image = SKConfig.gainWebsiteDefaultIcon()
             }
             
             return item
