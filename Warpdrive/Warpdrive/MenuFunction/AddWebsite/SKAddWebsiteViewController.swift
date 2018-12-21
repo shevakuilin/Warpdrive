@@ -18,6 +18,7 @@ class SKAddWebsiteViewController: NSViewController {
     private var webIconDataStr: String?                 /// 网站icon图片data字符
     
     public var addCompletionDelegate = Delegated<SKWebsiteInfo, Void>() /// 添加站点完成回调
+    public var closePopoverDelegate = Delegated<Void, Void>()   /// 关闭窗口
     
     class func loadFromStoryboard() -> SKAddWebsiteViewController {
         let stroyboard = NSStoryboard(name: "Main", bundle: nil)
@@ -27,9 +28,8 @@ class SKAddWebsiteViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initElements()
 //        setMouseAction()
-        self.websiteTextField.delegate = self
-        self.webNameTextField.delegate = self
     }
     
     override func viewDidDisappear() {
@@ -49,14 +49,6 @@ class SKAddWebsiteViewController: NSViewController {
             websiteInfo.websiteIconUrl = self.webIconDataStr
             addCompletionDelegate.call(websiteInfo)
         }
-//        updateMenuList { [weak self] (completion) in
-//            guard let strongSelf = self else {
-//                return
-//            }
-//            if completion {
-//                strongSelf.closePopover()
-//            }
-//        }
     }
     
     /// 点击上传图片
@@ -101,7 +93,15 @@ class SKAddWebsiteViewController: NSViewController {
 //        print("在window中的坐标为 \(eventLocation)")
 //        let center = self.view.convert(eventLocation, to: nil)
 //    }
-    
+}
+
+private extension SKAddWebsiteViewController {
+    private func initElements() {
+        self.websiteTextField.placeholderAttributedString = kAttributedStyle("网址", self.websiteTextField.font!, kColor(88, 86, 92), .left, 5)
+        self.webNameTextField.placeholderAttributedString = kAttributedStyle("站点名称", self.websiteTextField.font!, kColor(88, 86, 92), .left, 5)
+        self.websiteTextField.delegate = self
+        self.webNameTextField.delegate = self
+    }
 }
 
 private extension SKAddWebsiteViewController {
