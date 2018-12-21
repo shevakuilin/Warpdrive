@@ -112,6 +112,7 @@ private extension SKAddWebsiteViewController {
         webNameTextField.resignFirstResponder()
         webNameTextField.attributedStringValue = NSAttributedString(string: "")
         webIcon.image = nil
+        webIconDataStr = nil
     }
     
     /// 错误状态处理
