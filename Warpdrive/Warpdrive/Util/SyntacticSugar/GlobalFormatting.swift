@@ -67,3 +67,12 @@ public func kColor(_ r: CGFloat,
     let denominatorRGB: CGFloat = 255.0
     return NSColor(red: r/denominatorRGB, green: g/denominatorRGB, blue: b/denominatorRGB, alpha: a)
 }
+
+/** 格式化NSNotificationName
+ *
+ *  @param name    通知name
+ *
+ */
+public func kNotificationName(_ name: String) -> NSNotification.Name {
+    return NSNotification.Name(rawValue: name)
+}
