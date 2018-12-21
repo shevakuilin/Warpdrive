@@ -420,9 +420,9 @@
 			projectRoot = "";
 			targets = (
 				9F2E50CF21BA64360083CAAA /* Warpdrive */,
-				9FB5CC2C21CCBA1E0022153F /* LauncherApplication */,
 				9F2E50E121BA643D0083CAAA /* WarpdriveTests */,
 				9F2E50EC21BA643D0083CAAA /* WarpdriveUITests */,
+				9FB5CC2C21CCBA1E0022153F /* LauncherApplication */,
 			);
 		};
 /* End PBXProject section */

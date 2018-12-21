@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ServiceManagement
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate  {
@@ -19,6 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate  {
     private lazy var websiteInfo = SKWebsiteInfo().then { _ in }    /// 网站信息
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        bootUp()
         initMenu()
         initPopover()
         loadWebsiteData()
@@ -26,6 +28,25 @@ class AppDelegate: NSObject, NSApplicationDelegate  {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+}
+
+private extension AppDelegate {
+    /// 开机启动
+    private func bootUp() {
+        let launcherApplicationIdentifier = "SK.LauncherApplication"
+        SMLoginItemSetEnabled(launcherApplicationIdentifier as CFString, true)
+        
+        var startedAtLogin = false
+        for app in NSWorkspace.shared.runningApplications {
+            if app.bundleIdentifier == launcherApplicationIdentifier {
+                startedAtLogin = true
+            }
+        }
+        
+        if startedAtLogin {
+            DistributedNotificationCenter.default().post(name: kNotificationName("killhelper"), object: Bundle.main.bundleIdentifier!)
+        }
     }
 }
 
