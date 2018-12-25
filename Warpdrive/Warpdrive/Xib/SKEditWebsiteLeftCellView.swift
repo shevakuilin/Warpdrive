@@ -16,11 +16,13 @@ class SKEditWebsiteLeftCellView: NSView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         // Drawing code here.
+        webIcon.wantsLayer = true
+        webIcon.layer?.cornerRadius = webIcon.frame.size.height/2
     }
     
     /// 设置数据
     public func setData(_ info: SKWebsiteInfo) {
-        webIcon.imageScaling = .scaleAxesIndependently
+        webIcon.imageScaling = .scaleProportionallyDown
         if let iconUrl = info.websiteIconUrl {
             if let imageData = Data(base64Encoded: iconUrl) {
                 if let image = NSImage(data: imageData) {

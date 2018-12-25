@@ -14,7 +14,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kHp-aV-dQD">
-                    <rect key="frame" x="41" y="4" width="441" height="17"/>
+                    <rect key="frame" x="48" y="4" width="434" height="17"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" id="iw2-3w-BE1">
                         <font key="font" usesAppearanceFont="YES"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -22,10 +22,10 @@
                     </textFieldCell>
                 </textField>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dPe-De-Fdi">
-                    <rect key="frame" x="20" y="5" width="15" height="15"/>
+                    <rect key="frame" x="20" y="3" width="20" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="15" id="3d0-i0-snz"/>
-                        <constraint firstAttribute="height" constant="15" id="TPI-z6-MRI"/>
+                        <constraint firstAttribute="width" constant="20" id="3d0-i0-snz"/>
+                        <constraint firstAttribute="height" constant="20" id="TPI-z6-MRI"/>
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="X80-iK-ZdI"/>
                 </imageView>
@@ -37,7 +37,7 @@
                 <constraint firstItem="kHp-aV-dQD" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="Rnp-OE-sAR"/>
                 <constraint firstItem="dPe-De-Fdi" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="USV-ub-DsD"/>
                 <constraint firstAttribute="trailing" secondItem="kHp-aV-dQD" secondAttribute="trailing" id="bgk-aX-SUA"/>
-                <constraint firstItem="kHp-aV-dQD" firstAttribute="leading" secondItem="dPe-De-Fdi" secondAttribute="trailing" constant="8" id="jaa-cE-Hml"/>
+                <constraint firstItem="kHp-aV-dQD" firstAttribute="leading" secondItem="dPe-De-Fdi" secondAttribute="trailing" constant="10" id="jaa-cE-Hml"/>
             </constraints>
             <connections>
                 <outlet property="webIcon" destination="dPe-De-Fdi" id="Bwj-zE-6ic"/>
