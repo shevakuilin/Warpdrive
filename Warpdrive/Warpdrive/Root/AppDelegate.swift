@@ -15,6 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate  {
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength) /// 状态栏
     private let menu = NSMenu()         /// 菜单栏
     private let popover = NSPopover()   /// 弹窗
+    
+    private let itemTitlePrefix = " "
     private var editWebsiteWindowController = SKEditWebsiteWindowController() /// 编辑网站弹窗
     
     private var websiteDataList: [SKWebsiteInfo]? /// 网站列表数据
@@ -194,8 +196,9 @@ private extension AppDelegate {
     
     /// 创建一个菜单子项
     private func creatMenuItem(info: SKWebsiteInfo) -> NSMenuItem? {
-        if let title = info.webName {
-            let item = NSMenuItem(title: " " + title, action: #selector(menuItemAction), keyEquivalent: "")
+        if var title = info.webName {
+            title = itemTitlePrefix + title
+            let item = NSMenuItem(title: title, action: #selector(menuItemAction), keyEquivalent: "")
             if let iconUrl = info.websiteIconUrl {
                 if let imageData = Data(base64Encoded: iconUrl) {
                     if let image = NSImage(data: imageData) {
@@ -247,7 +250,9 @@ private extension AppDelegate {
             return
         }
         /// 过滤出于菜单子项相对应的链接
-        let websiteList = dataList.filter { $0.webName == sender.title }
+        let index = sender.title.index(sender.title.startIndex, offsetBy: itemTitlePrefix.count)
+        let originalTitle: String = String(sender.title.suffix(from: index))
+        let websiteList = dataList.filter { $0.webName == originalTitle }
         guard let urlStr = websiteList.first?.website else {
             return
         }
