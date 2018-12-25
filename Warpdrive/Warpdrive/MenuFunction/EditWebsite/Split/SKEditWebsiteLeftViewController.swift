@@ -50,6 +50,7 @@ private extension SKEditWebsiteLeftViewController {
     private func lodaDataList() {
         dataList = SKWebsiteDataManager.readData()
         tableView.reloadData()
+        tableView.selectRowIndexes(IndexSet(arrayLiteral: 0), byExtendingSelection: false)
     }
 }
 
@@ -71,11 +72,11 @@ extension SKEditWebsiteLeftViewController: NSTableViewDelegate {
         guard dataList.count > 0 else {
             return
         }
-        let table = notification.object as! NSTableView
-        guard dataList.count > table.selectedRow else {
+
+        guard dataList.count > self.tableView.selectedRow else {
             return
         }
-        let info = dataList[table.selectedRow]
+        let info = dataList[self.tableView.selectedRow]
         let userInfo = ["website": info.website, "webName": info.webName, "webIcon": info.websiteIconUrl]
         /// 发送通知rightView同步显示当前选中站点信息
         NotificationCenter.default.post(name: kNotificationName("SelectedWebname"), object: nil, userInfo: userInfo as [AnyHashable : Any])
