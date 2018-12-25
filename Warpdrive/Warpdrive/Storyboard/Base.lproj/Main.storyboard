@@ -818,11 +818,11 @@
                                         </connections>
                                     </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KCn-Kw-mbH">
-                                        <rect key="frame" x="82" y="164" width="97" height="17"/>
+                                        <rect key="frame" x="88" y="164" width="84" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="ky0-yn-ena"/>
                                         </constraints>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="点击可替换图片" id="wvR-f8-4sF">
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="点击替换图片" id="wvR-f8-4sF">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
