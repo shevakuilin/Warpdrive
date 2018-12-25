@@ -14,6 +14,9 @@ class SKEditWebsiteRightViewController: NSViewController {
     @IBOutlet weak var webNameTextField: NSTextField!
     @IBOutlet weak var webIconImageView: NSButton!
     
+    @IBOutlet weak var cancelButton: NSButton!
+    @IBOutlet weak var confirmButton: NSButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initElements()
@@ -30,6 +33,7 @@ class SKEditWebsiteRightViewController: NSViewController {
 private extension SKEditWebsiteRightViewController {
     private func initElements() {
         webIconImageView.imageScaling = .scaleProportionallyDown
+        confirmButton.highlight(true)
     }
     
     private func defaultData() {

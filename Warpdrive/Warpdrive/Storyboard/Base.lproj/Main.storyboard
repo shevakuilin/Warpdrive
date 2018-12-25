@@ -882,6 +882,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="T86-wM-rNj" id="zI1-yo-NJO"/>
+                        <outlet property="confirmButton" destination="vtM-dd-Xbq" id="ME7-vq-wvO"/>
                         <outlet property="webIconImageView" destination="hu1-3C-2eP" id="bWy-pf-HmX"/>
                         <outlet property="webNameTextField" destination="77B-jE-xDu" id="CZV-e7-yRD"/>
                         <outlet property="websiteTextField" destination="sQD-w9-H4I" id="Zrt-2P-74e"/>
