@@ -76,3 +76,18 @@ public func kColor(_ r: CGFloat,
 public func kNotificationName(_ name: String) -> NSNotification.Name {
     return NSNotification.Name(rawValue: name)
 }
+
+/** 格式化NSRect
+ *
+ *  @param x        x坐标
+ *  @param y        y坐标
+ *  @param width    宽
+ *  @param height   高
+ *
+ */
+public func kFrame(_ x: CGFloat,
+                   _ y: CGFloat,
+                   _ width: CGFloat,
+                   _ height: CGFloat) -> NSRect {
+    return NSRect(x: x, y: y, width: width, height: height)
+}
