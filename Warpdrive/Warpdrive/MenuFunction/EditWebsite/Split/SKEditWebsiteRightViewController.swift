@@ -16,6 +16,8 @@ class SKEditWebsiteRightViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initElements()
+        defaultData()
         registerNotification()
     }
     
@@ -23,6 +25,31 @@ class SKEditWebsiteRightViewController: NSViewController {
         destroyNotification()
     }
     
+}
+
+private extension SKEditWebsiteRightViewController {
+    private func initElements() {
+        webIconImageView.imageScaling = .scaleProportionallyDown
+    }
+    
+    private func defaultData() {
+        let dataList = SKWebsiteDataManager.readData()
+        guard let info = dataList.first else {
+            return
+        }
+        websiteTextField.stringValue = info.website ?? ""
+        webNameTextField.stringValue = info.webName ?? ""
+        
+        if let websiteIconUrl = info.websiteIconUrl {
+            if let imageData = Data(base64Encoded: websiteIconUrl) {
+                if let image = NSImage(data: imageData) {
+                    webIconImageView.image = image
+                }
+            }
+        } else {
+            webIconImageView.image = SKConfig.gainWebsiteDefaultIcon()
+        }
+    }
 }
 
 private extension SKEditWebsiteRightViewController {
@@ -44,7 +71,6 @@ private extension SKEditWebsiteRightViewController {
         let webName = userInfo["webName"] as! String
         websiteTextField.stringValue = website
         webNameTextField.stringValue = webName
-        webIconImageView.imageScaling = .scaleAxesIndependently
         
         if let websiteIconUrl: String = userInfo["webIcon"] as? String {
             if let imageData = Data(base64Encoded: websiteIconUrl) {
