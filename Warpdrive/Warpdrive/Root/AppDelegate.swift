@@ -195,7 +195,7 @@ private extension AppDelegate {
     /// 创建一个菜单子项
     private func creatMenuItem(info: SKWebsiteInfo) -> NSMenuItem? {
         if let title = info.webName {
-            let item = NSMenuItem(title: title, action: #selector(menuItemAction), keyEquivalent: "")
+            let item = NSMenuItem(title: " " + title, action: #selector(menuItemAction), keyEquivalent: "")
             if let iconUrl = info.websiteIconUrl {
                 if let imageData = Data(base64Encoded: iconUrl) {
                     if let image = NSImage(data: imageData) {
@@ -263,9 +263,17 @@ private extension AppDelegate {
     private func resize(image: NSImage, w: Int, h: Int) -> NSImage? {
         let destSize = NSMakeSize(CGFloat(w), CGFloat(h))
         let newImage = NSImage(size: destSize)
+        let imageFrame = kFrame(0, 0, destSize.width, destSize.height)
+        
         newImage.lockFocus()
-        image.draw(in: NSMakeRect(0, 0, destSize.width, destSize.height), from: NSMakeRect(0, 0, image.size.width, image.size.height), operation: .sourceOver, fraction: CGFloat(1))
+        /// 裁剪圆角
+        NSGraphicsContext.saveGraphicsState()
+        let path = NSBezierPath(roundedRect: imageFrame, xRadius: image.size.width/2, yRadius: image.size.height/2)
+        path.addClip()
+        image.draw(in: imageFrame, from: NSMakeRect(0, 0, image.size.width, image.size.height), operation: .sourceOver, fraction: CGFloat(1))
+        NSGraphicsContext.restoreGraphicsState()
         newImage.unlockFocus()
+        
         newImage.size = destSize
         guard let tiffRepresentation = newImage.tiffRepresentation else {
             return nil
