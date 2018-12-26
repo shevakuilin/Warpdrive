@@ -31,6 +31,7 @@
 		9FD0E22221BEAC08002D83E3 /* SKAddWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD0E22121BEAC08002D83E3 /* SKAddWebsiteViewController.swift */; };
 		9FD0E22321BEB4C6002D83E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E50D921BA643D0083CAAA /* Main.storyboard */; };
 		9FD0E22621BEB9A7002D83E3 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD0E22521BEB9A7002D83E3 /* Delegate.swift */; };
+		9FE7647F21D32B0B005C9596 /* SKUploadFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7647E21D32B0B005C9596 /* SKUploadFile.swift */; };
 		DFF05A5D28C50B4E55155A18 /* libPods-Warpdrive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAC6B2744AD525072C55EB7 /* libPods-Warpdrive.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		9FB5CC3921CCBA220022153F /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
 		9FD0E22121BEAC08002D83E3 /* SKAddWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKAddWebsiteViewController.swift; sourceTree = "<group>"; };
 		9FD0E22521BEB9A7002D83E3 /* Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
+		9FE7647E21D32B0B005C9596 /* SKUploadFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKUploadFile.swift; sourceTree = "<group>"; };
 		C9A7BCFD37F07E411AA7D13C /* Pods-Warpdrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Warpdrive.release.xcconfig"; path = "Target Support Files/Pods-Warpdrive/Pods-Warpdrive.release.xcconfig"; sourceTree = "<group>"; };
 		DCAC6B2744AD525072C55EB7 /* libPods-Warpdrive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Warpdrive.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 			children = (
 				9F14A3CC21CB3A8E0058F34B /* SKConvert.swift */,
 				9FA9527B21CC997700769E88 /* SKConfig.swift */,
+				9FE7647E21D32B0B005C9596 /* SKUploadFile.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				9F14A3CD21CB3A8E0058F34B /* SKConvert.swift in Sources */,
 				9F27153321CCF03F0038BB14 /* SKEditWebsiteViewController.swift in Sources */,
 				9F14A3C921CB37E30058F34B /* SKWebsiteInfo.swift in Sources */,
+				9FE7647F21D32B0B005C9596 /* SKUploadFile.swift in Sources */,
 				9F27154C21CD5D3A0038BB14 /* SKEditWebsiteRightViewController.swift in Sources */,
 				9F6837C521C0A2150056D3C6 /* GlobalFormatting.swift in Sources */,
 				9F27153921CD04430038BB14 /* SKEditWebsiteLeftViewController.swift in Sources */,
