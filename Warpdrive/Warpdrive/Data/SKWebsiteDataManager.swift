@@ -54,6 +54,17 @@ class SKWebsiteDataManager: NSObject {
         return readData()
     }
     
+    /// 更新指定下标的网站列表数据
+    class func updateData(index: Int, replaceInfo: SKWebsiteInfo) {
+        var dataList = readData()
+        guard dataList.count > 0 else {
+            return
+        }
+        dataList[index] = replaceInfo
+        resetData(dataList: dataList)
+        printLog("指定下标网站列表数据更新成功")
+    }
+    
     /// 重置本地沙盒的网站列表数据
     class func resetData(dataList: [SKWebsiteInfo]) {
         let list = dataList.map { (info) -> [String:String] in
@@ -75,8 +86,27 @@ class SKWebsiteDataManager: NSObject {
     
     /// 读取网站列表数据数量
     class func readDataCount() -> Int {
-        let data = readData()
-        return data.count
+        let dataList = readData()
+        return dataList.count
+    }
+    
+    /// 查询指定网站在本地沙盒数据列表中的下标，返回包含查询状态以及下标的元组
+    class func queryIndex(websiteInfo: SKWebsiteInfo) -> (Bool, Int) {
+        let dataList = readData()
+        guard dataList.count > 0 else {
+            printLog("查询指定下标失败")
+            return (false, 0)
+        }
+        for info in dataList {
+            if info.webName == websiteInfo.webName {
+                if let index = dataList.index(of: info) {
+                    printLog("查询指定下标成功")
+                    return (true, index)
+                }
+            }
+        }
+        printLog("查询指定下标失败")
+        return (false, 0)
     }
     
     /// 清除全部网站列表数据
