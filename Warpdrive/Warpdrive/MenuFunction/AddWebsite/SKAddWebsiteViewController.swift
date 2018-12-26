@@ -53,31 +53,14 @@ class SKAddWebsiteViewController: NSViewController {
     
     /// 点击上传图片
     @IBAction func clickUploadImage(_ sender: Any) {
-        let openPanel = NSOpenPanel()
-        openPanel.prompt = "选择图片，目前仅支持png、jpeg和jpg格式图片"
-        openPanel.allowedFileTypes = ["png", "jpeg", "jpg"]
-        openPanel.directoryURL = nil
-        
-        openPanel.beginSheetModal(for: NSApplication.shared.keyWindow!) { [weak self] (returnCode) in
+        SKUploadFile.chooseImageFile(success: { [weak self] (image, fileContext) in
             guard let strongSelf = self else {
                 return
             }
-            if returnCode.rawValue == 1 {
-                guard let fileUrl = openPanel.urls.first else {
-                    return
-                }
-                do {
-                    let fileHandle = try FileHandle(forReadingFrom: fileUrl)
-                    let imageData = fileHandle.readDataToEndOfFile()
-                    strongSelf.webIcon.image = NSImage(data: imageData)
-//                    let fileContext = String(data: imageData, encoding: .utf8)
-                    
-                    let fileContext = imageData.base64EncodedString(options: Data.Base64EncodingOptions())//imageData.map { String(format: "%02hhx", $0) }.joined()
-                    strongSelf.webIconDataStr = fileContext
-                } catch {
-                    
-                }
-            }
+            strongSelf.webIcon.image = image
+            strongSelf.webIconDataStr = fileContext
+        }) {
+            printLog("文件读取失败")
         }
     }
     
@@ -112,6 +95,7 @@ private extension SKAddWebsiteViewController {
         webNameTextField.resignFirstResponder()
         webNameTextField.attributedStringValue = NSAttributedString(string: "")
         webIcon.image = nil
+        webIcon.title = "点击上传图片"
         webIconDataStr = nil
     }
     
