@@ -814,7 +814,7 @@
                                             <font key="font" metaFont="miniSystem"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="clickUploadImage:" target="uQU-rf-37g" id="xMO-iw-1V2"/>
+                                            <action selector="replaceImage:" target="dUy-aD-zMl" id="MWP-nd-0CH"/>
                                         </connections>
                                     </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KCn-Kw-mbH">
@@ -857,6 +857,9 @@
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="clickConfirm:" target="dUy-aD-zMl" id="IXg-QP-gmj"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T86-wM-rNj">
                                 <rect key="frame" x="126" y="62" width="80" height="32"/>
@@ -868,6 +871,9 @@
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="clickCancel:" target="dUy-aD-zMl" id="CIq-qX-1QE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>

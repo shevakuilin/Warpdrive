@@ -28,6 +28,26 @@ class SKEditWebsiteRightViewController: NSViewController {
         destroyNotification()
     }
     
+    /// 替换图片
+    @IBAction func replaceImage(_ sender: Any) {
+        SKUploadFile.chooseImageFile(success: { [weak self] (image, fileContext) in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.webIconImageView.image = image
+        }) {
+            printLog("编辑站点图片读取失败")
+        }
+    }
+    
+    /// 点击取消
+    @IBAction func clickCancel(_ sender: Any) {
+    }
+    
+    /// 点击确认
+    @IBAction func clickConfirm(_ sender: Any) {
+    }
+    
 }
 
 private extension SKEditWebsiteRightViewController {
@@ -85,7 +105,5 @@ private extension SKEditWebsiteRightViewController {
         } else {
             webIconImageView.image = SKConfig.gainWebsiteDefaultIcon()
         }
-        
-        
     }
 }
