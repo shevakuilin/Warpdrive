@@ -26,6 +26,8 @@ class SKWebsiteDataManager: NSObject {
 //        _shareManager = nil
 //    }
     
+    /// TODO: 数据以创建时间的时间戳字符串为id创建，作为搜索的唯一主键
+    
     /// 保存数据至本地沙盒
     class func saveData(websiteInfo: SKWebsiteInfo) {
         guard websiteInfo.website != "" && websiteInfo.website != nil else {
@@ -63,6 +65,39 @@ class SKWebsiteDataManager: NSObject {
         dataList[index] = replaceInfo
         resetData(dataList: dataList)
         printLog("指定下标网站列表数据更新成功")
+    }
+    
+    /// 更新指定下标的站点名称
+    class func updateWebName(index: Int, replaceName: String) {
+        var dataList = readData()
+        guard dataList.count > 0 else {
+            return
+        }
+        dataList[index].webName = replaceName
+        resetData(dataList: dataList)
+        printLog("指定下标的站点名称更新成功")
+    }
+    
+    /// 更新指定下标的网站链接
+    class func updateWebsite(index: Int, replaceUrl: String) {
+        var dataList = readData()
+        guard dataList.count > 0 else {
+            return
+        }
+        dataList[index].website = replaceUrl
+        resetData(dataList: dataList)
+        printLog("指定下标的站点名称更新成功")
+    }
+    
+    /// 更新指定下标的网站图标
+    class func updateWebIconDataString(index: Int, replaceIconDataString: String) {
+        var dataList = readData()
+        guard dataList.count > 0 else {
+            return
+        }
+        dataList[index].websiteIconUrl = replaceIconDataString
+        resetData(dataList: dataList)
+        printLog("指定下标的网站图标更新成功")
     }
     
     /// 重置本地沙盒的网站列表数据
